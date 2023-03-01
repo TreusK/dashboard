@@ -6,32 +6,161 @@
 }
 
 body {
-  min-height: 100vh;
+  min-width: 300px;
 }
 
+
+input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 8px;
+  width: 170px;
+}
+
+
+
+
 /* Layout */
+
+.is-flex {
+  display: flex;
+}
 
 #dashContainer {
   min-height: 100vh;
   display: grid;
-  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-  grid-template-areas: "sidebar header header header header"
-                       "sidebar main   main   main   main"
-                       "sidebar main   main   main   main"
-                       "sidebar main   main   main   main"
-                       "sidebar main   main   main   main"
-                       "sidebar main   main   main   main";
+  grid-template-rows: 1fr repeat(6, 2fr);
+  grid-template-areas: "header"
+                       "main  "
+                       "main  "
+                       "main  "
+                       "main  "
+                       "main  "
+                       "main  "
+
 }
 
-#dashHeader {
-  grid-area: header;
-  background: red;
+.desktop, .middle {
+  display: none;
+  align-items: center;
 }
+
+
 #dashSidebar {
   grid-area: sidebar;
   background: blue;
+  display: none;
 }
 #dashMain {
   grid-area: main;
   background: green;
+}
+
+
+
+
+
+/* Header */
+
+#dashHeader {
+  grid-area: header;
+  background: red;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.avatarContainer {
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarContainer img {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.notifIcon {
+  margin-left: auto;
+}
+
+.headerButton {
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.menuIcon, .headerInput, .addButton, .notifIcon {
+  margin-right: 10px;
+}
+
+.username {
+    display: none;
+}
+
+
+
+/* General */
+
+.material-icons {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+
+
+/* Queries */
+
+@media (min-width: 600px) {
+  #dashContainer {
+    grid-template: 1fr repeat(5, 1.5fr) / repeat(5, 1fr);
+    grid-template-areas: "sidebar header header header header"
+                         "sidebar  main   main   main   main"
+                         "sidebar  main   main   main   main"
+                         "sidebar  main   main   main   main"
+                         "sidebar  main   main   main   main"
+                         "sidebar  main   main   main   main"
+  }
+
+  #dashSidebar {
+    display: block;
+  }
+  .mobile {
+    display: none
+  }
+  .middle {
+    display: flex;
+  }
+  .material-icons {
+    font-size: 1.5rem;
+  }
+  .avatarContainer img {
+    width: 60px;
+  }
+}
+
+@media (min-width: 900px) {
+  .middle {
+    display: none
+  }
+  .desktop {
+    display: flex;
+  }
+  .headerInput {
+    width: 250px;
+  }
+  .avatarContainer {
+    padding: 5px;
+    justify-content: space-between;
+    width: 150px;
+    background-color: blue;
+  }
+  .username {
+    text-align: center;
+    display: block;
+  }
 }

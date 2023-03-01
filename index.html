@@ -4,13 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Dashboard</title>
 </head>
 <body>
   <div id="dashContainer">
-    <header id="dashHeader">
-      header
+
+    <header id="dashHeader" class="is-flex">
+      <div class="mobile">
+        <i class="menuIcon material-icons">menu</i>
+        <i class="searchIcon material-icons">search</i>
+      </div>
+      <div class="middle">
+        <i class="menuIcon material-icons">menu</i>
+        <input class="headerInput" type="text" />
+        <button class="headerButton addButton is-flex"><i class="material-icons">add</i></button>
+        <button class="headerButton uploadButton is-flex"><i class="material-icons">vertical_align_top</i></button>
+      </div>
+      <div class="desktop">
+        <input class="headerInput" type="text" />
+        <button class="headerButton addButton is-flex"><i class="material-icons">add</i>New</button>
+        <button class="headerButton uploadButton is-flex"><i class="material-icons">vertical_align_top</i>Upload</button>
+      </div>
+      <i class="notifIcon material-icons">notifications</i>
+      <div class="avatarContainer is-flex">
+        <img src="./assets/avatar.jpg" alt="avatar" />
+        <p class="username">James Osrent</p>
+      </div>
     </header>
 
     <div id="dashSidebar">
@@ -18,10 +39,11 @@
     </div>
 
     <main id="dashMain">
-      main
     </main>
+
   </div>
 
 <script src="./script.js"></script>
 </body>
 </html>
+
