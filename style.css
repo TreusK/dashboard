@@ -7,6 +7,7 @@
 
 body {
   min-width: 300px;
+  font-family: sans-serif
 }
 
 
@@ -50,17 +51,24 @@ input {
 }
 
 
-#dashSidebar {
-  grid-area: sidebar;
-  background: blue;
-  display: none;
-}
+
 #dashMain {
   grid-area: main;
-  background: green;
+  background: whitesmoke;
 }
 
 
+
+/* General */
+
+body {
+  font-size: 0.6rem;
+}
+
+.material-icons {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 
 
 
@@ -68,7 +76,7 @@ input {
 
 #dashHeader {
   grid-area: header;
-  background: red;
+  background: lightgray;
   align-items: center;
   padding: 0 30px;
 }
@@ -76,6 +84,7 @@ input {
 .avatarContainer {
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 
 .avatarContainer img {
@@ -102,13 +111,31 @@ input {
 }
 
 
+/* Sidebar */
 
-/* General */
-
-.material-icons {
-  font-size: 1.2rem;
-  font-weight: 500;
+#dashSidebar {
+  grid-area: sidebar;
+  background: rgb(189, 192, 226);
+  display: none;
+  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
 }
+
+#dashSidebar h3 {
+  padding: 2rem 0;
+}
+
+#dashSidebar p {
+  padding-left: 0.4rem;
+}
+
+#dashSidebar div {
+  align-items: center;
+  padding: 0.3rem;
+  margin-bottom: 0.1rem;
+}
+
 
 
 
@@ -116,8 +143,11 @@ input {
 /* Queries */
 
 @media (min-width: 600px) {
+  body {
+    font-size: 0.8rem;
+  }
   #dashContainer {
-    grid-template: 1fr repeat(5, 1.5fr) / repeat(5, 1fr);
+    grid-template: 1fr repeat(5, 1.5fr) / auto repeat(4, 1fr);
     grid-template-areas: "sidebar header header header header"
                          "sidebar  main   main   main   main"
                          "sidebar  main   main   main   main"
@@ -127,7 +157,7 @@ input {
   }
 
   #dashSidebar {
-    display: block;
+    display: flex;
   }
   .mobile {
     display: none
@@ -139,11 +169,17 @@ input {
     font-size: 1.5rem;
   }
   .avatarContainer img {
-    width: 60px;
+    width: 50px;
   }
 }
 
 @media (min-width: 900px) {
+  body {
+    font-size: 1rem
+  }
+  #dashContainer {
+    grid-template-columns: auto repeat(4, 1fr);
+  }
   .middle {
     display: none
   }
@@ -157,7 +193,7 @@ input {
     padding: 5px;
     justify-content: space-between;
     width: 150px;
-    background-color: blue;
+    background-color: gray;
   }
   .username {
     text-align: center;
