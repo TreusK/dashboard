@@ -35,7 +35,7 @@ input {
 #dashContainer {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr repeat(6, 2fr);
+  grid-template-rows: 50px repeat(6, 2fr);
   grid-template-areas: "header"
                        "main  "
                        "main  "
@@ -154,9 +154,17 @@ body {
   border-left: solid 4px lightblue;
   border-radius: 3px;
   padding: 0.8em;
+  padding-bottom: 0.2em;
 }
 .projectCard .is-flex {
   justify-content: flex-end;
+}
+.projectCard i {
+  font-size: 1.2em;
+  padding: 5px;
+}
+.projectCard i:nth-child(1) {
+  color: rgb(231, 4, 4);
 }
 
 .announcements, .trending {
@@ -178,7 +186,7 @@ body {
     font-size: 0.8rem;
   }
   #dashContainer {
-    grid-template: 70px repeat(5, 1.5fr) / auto repeat(4, 1fr);
+    grid-template: 60px repeat(5, 1.5fr) / auto repeat(4, 1fr);
     grid-template-areas: "sidebar header header header header"
                          "sidebar  main   main   main   main"
                          "sidebar  main   main   main   main"
@@ -229,5 +237,8 @@ body {
   .username {
     text-align: center;
     display: block;
+  }
+  #dashMain {
+    display: flex;
   }
 }
