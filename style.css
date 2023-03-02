@@ -6,6 +6,7 @@
 }
 
 body {
+  min-height: 100vh;
   min-width: 300px;
   font-family: sans-serif
 }
@@ -50,12 +51,6 @@ input {
   align-items: center;
 }
 
-
-
-#dashMain {
-  grid-area: main;
-  background: whitesmoke;
-}
 
 
 
@@ -138,6 +133,42 @@ body {
 
 
 
+/* Main */
+
+#dashMain {
+  grid-area: main;
+  background: whitesmoke;
+  display: block;
+  padding: 1rem;
+}
+
+.projectsSection, .announcementsSection, .trendingSection {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em;
+}
+
+.projectCard {
+  margin-top: 1em;
+  background-color: lightgray;
+  border-left: solid 4px lightblue;
+  border-radius: 3px;
+  padding: 0.8em;
+}
+.projectCard .is-flex {
+  justify-content: flex-end;
+}
+
+.announcements, .trending {
+  background: lightgray;
+  margin-top: 1em;
+  padding: 0.8em;
+  border-radius: 3px;
+}
+
+
+
+
 
 
 /* Queries */
@@ -147,7 +178,7 @@ body {
     font-size: 0.8rem;
   }
   #dashContainer {
-    grid-template: 1fr repeat(5, 1.5fr) / auto repeat(4, 1fr);
+    grid-template: 70px repeat(5, 1.5fr) / auto repeat(4, 1fr);
     grid-template-areas: "sidebar header header header header"
                          "sidebar  main   main   main   main"
                          "sidebar  main   main   main   main"
@@ -174,11 +205,11 @@ body {
 }
 
 @media (min-width: 900px) {
+  #dashContainer {
+    grid-template-rows: 80px repeat(5, 1.5fr)
+  }
   body {
     font-size: 1rem
-  }
-  #dashContainer {
-    grid-template-columns: auto repeat(4, 1fr);
   }
   .middle {
     display: none
