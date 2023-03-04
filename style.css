@@ -1,5 +1,5 @@
 /* Reset */
-* { 
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,20 +33,22 @@ input {
 }
 
 #dashContainer {
+  position: relative;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 50px repeat(6, 2fr);
   grid-template-areas: "header"
-                       "main  "
-                       "main  "
-                       "main  "
-                       "main  "
-                       "main  "
-                       "main  "
+    "main  "
+    "main  "
+    "main  "
+    "main  "
+    "main  "
+    "main  "
 
 }
 
-.desktop, .middle {
+.desktop,
+.middle {
   display: none;
   align-items: center;
 }
@@ -63,9 +65,22 @@ body {
 .material-icons {
   font-size: 1.2rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
+.overlay {
+  display: none;
+}
 
+.showOverlay {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
 /* Header */
 
@@ -97,12 +112,15 @@ body {
   padding: 4px;
 }
 
-.menuIcon, .headerInput, .addButton, .notifIcon {
+.menuIcon,
+.headerInput,
+.addButton,
+.notifIcon {
   margin-right: 10px;
 }
 
 .username {
-    display: none;
+  display: none;
 }
 
 
@@ -117,20 +135,38 @@ body {
   align-items: center;
 }
 
-#dashSidebar h3 {
-  padding: 2rem 0;
+#dashSidebarMobile {
+  background: rgb(189, 192, 226);
+  display: block;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 100%;
 }
 
-#dashSidebar p {
-  padding-left: 0.4rem;
+#dashSidebar h3,
+#dashSidebarMobile h3 {
+  padding: 2em 0;
 }
 
-#dashSidebar div {
+#dashSidebar p,
+#dashSidebarMobile p {
+  padding-left: 0.4em;
+}
+
+#dashSidebar div,
+#dashSidebarMobile div {
   align-items: center;
   padding: 0.3rem;
   margin-bottom: 0.1rem;
+  cursor: pointer;
 }
 
+#dashSidebar .dashOption:hover,
+#dashSidebarMobile .dashOption:hover {
+  background-color: aqua;
+}
 
 
 /* Main */
@@ -142,7 +178,9 @@ body {
   padding: 1rem;
 }
 
-.projectsSection, .announcementsSection, .trendingSection {
+.projectsSection,
+.announcementsSection,
+.trendingSection {
   display: flex;
   flex-direction: column;
   padding: 0.8em;
@@ -156,18 +194,22 @@ body {
   padding: 0.8em;
   padding-bottom: 0.2em;
 }
+
 .projectCard .is-flex {
   justify-content: flex-end;
 }
+
 .projectCard i {
   font-size: 1.2em;
   padding: 5px;
 }
+
 .projectCard i:nth-child(1) {
   color: rgb(231, 4, 4);
 }
 
-.announcements, .trending {
+.announcements,
+.trending {
   background: lightgray;
   margin-top: 1em;
   padding: 0.8em;
@@ -185,60 +227,85 @@ body {
   body {
     font-size: 0.8rem;
   }
+
   #dashContainer {
     grid-template: 60px repeat(5, 1.5fr) / auto repeat(4, 1fr);
     grid-template-areas: "sidebar header header header header"
-                         "sidebar  main   main   main   main"
-                         "sidebar  main   main   main   main"
-                         "sidebar  main   main   main   main"
-                         "sidebar  main   main   main   main"
-                         "sidebar  main   main   main   main"
+      "sidebar  main   main   main   main"
+      "sidebar  main   main   main   main"
+      "sidebar  main   main   main   main"
+      "sidebar  main   main   main   main"
+      "sidebar  main   main   main   main"
   }
 
   #dashSidebar {
     display: flex;
   }
+
   .mobile {
     display: none
   }
+
   .middle {
     display: flex;
   }
+
   .material-icons {
     font-size: 1.5rem;
   }
+
   .avatarContainer img {
     width: 50px;
   }
 }
 
+
 @media (min-width: 900px) {
   #dashContainer {
     grid-template-rows: 80px repeat(5, 1.5fr)
   }
+
   body {
     font-size: 1rem
   }
+
   .middle {
     display: none
   }
+
   .desktop {
     display: flex;
   }
+
   .headerInput {
     width: 250px;
   }
+
   .avatarContainer {
     padding: 5px;
     justify-content: space-between;
     width: 150px;
     background-color: gray;
   }
+
   .username {
     text-align: center;
     display: block;
   }
+
   #dashMain {
     display: flex;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .projectCard {
+    flex: 1 1 300px;
+    margin-top: 0;
   }
 }
