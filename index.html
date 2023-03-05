@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Dashboard</title>
@@ -36,7 +39,7 @@
             <i class="homeIcon material-icons">event_note</i>
             <p>Tasks</p>
           </div>
-          <div class="dashOption is-flex">
+          <div class="dashOption communities is-flex">
             <i class="homeIcon material-icons">thumbs_up_down</i>
             <p>Communities</p>
           </div>
@@ -74,6 +77,8 @@
             class="material-icons">vertical_align_top</i>Upload</button>
       </div>
       <i class="notifIcon material-icons">notifications</i>
+      <i class="themeIcon sunIcon hide material-icons">brightness_6</i>
+      <i class="themeIcon moonIcon material-icons">dark_mode</i>
       <div class="avatarContainer is-flex">
         <img src="./assets/avatar.jpg" alt="avatar" />
         <p class="username">James Osrent</p>
@@ -103,7 +108,7 @@
           <i class="homeIcon material-icons">event_note</i>
           <p>Tasks</p>
         </div>
-        <div class="dashOption is-flex">
+        <div class="dashOption communities is-flex">
           <i class="homeIcon material-icons">thumbs_up_down</i>
           <p>Communities</p>
         </div>
@@ -120,13 +125,12 @@
           <p>Privacy</p>
         </div>
       </div>
-
     </div>
 
     <main id="dashMain">
 
       <div class="projectsSection">
-        <h1 class="title">Projects</h1>
+        <h2 class="title">Projects</h2>
         <div class="projects">
           <div class="projectCard">
             <h3>Cool Project</h3>
@@ -138,8 +142,8 @@
             </div>
           </div>
           <div class="projectCard">
-            <h3>Cool Project</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias minima quia, quis nemo facere ipsum debitis aliquid n</p>
+            <h3>Bootstrap Script</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
             <div class='is-flex'>
               <i class="homeIcon material-icons">delete_forever</i>
               <i class="homeIcon material-icons">share</i>
@@ -147,8 +151,8 @@
             </div>
           </div>
           <div class="projectCard">
-            <h3>Cool Project</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias minima quia, quis nemo facere ipsum debitis aliquid n</p>
+            <h3>Library</h3>
+            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and</p>
             <div class='is-flex'>
               <i class="homeIcon material-icons">delete_forever</i>
               <i class="homeIcon material-icons">share</i>
@@ -156,8 +160,8 @@
             </div>
           </div>
           <div class="projectCard">
-            <h3>Cool Project</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias minima quia, quis nemo facere ipsum debitis aliquid n</p>
+            <h3>Node + Express</h3>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium </p>
             <div class='is-flex'>
               <i class="homeIcon material-icons">delete_forever</i>
               <i class="homeIcon material-icons">share</i>
@@ -165,8 +169,8 @@
             </div>
           </div>
           <div class="projectCard">
-            <h3>Cool Project</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias minima quia, quis nemo facere ipsum debitis aliquid n</p>
+            <h3>Eshop</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum </p>
             <div class='is-flex'>
               <i class="homeIcon material-icons">delete_forever</i>
               <i class="homeIcon material-icons">share</i>
@@ -174,8 +178,8 @@
             </div>
           </div>
           <div class="projectCard">
-            <h3>Cool Project</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias minima quia, quis nemo facere ipsum debitis aliquid n</p>
+            <h3>TicTacToe</h3>
+            <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized</p>
             <div class='is-flex'>
               <i class="homeIcon material-icons">delete_forever</i>
               <i class="homeIcon material-icons">share</i>
@@ -183,7 +187,7 @@
             </div>
           </div>
           <div class="projectCard">
-            <h3>Cool Project</h3>
+            <h3>Bulma/Tailwind messing around</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias minima quia, quis nemo facere ipsum debitis aliquid n</p>
             <div class='is-flex'>
               <i class="homeIcon material-icons">delete_forever</i>
@@ -209,21 +213,21 @@
         <div class="trendingSection">
           <h2 class="title">Trending</h2>
           <div class="trending">
-            <div>
-              <img src="">
-              <p>Lorem ipsum dolor sit amet </p>
+            <div class="trendingCard is-flex">
+              <img src="./assets/av1.png" alt="avatar" />
+              <p class="">The perfect apple pie!</p>
             </div>
-            <div>
-              <img src="">
-              <p>Lorem ipsum dolor sit amet </p>
+            <div class="trendingCard is-flex">
+              <img src="./assets/av2.png" alt="avatar" />
+              <p class="">You will not BELIEVE this..</p>
             </div>
-            <div>
-              <img src="">
-              <p>Lorem ipsum dolor sit amet </p>
+            <div class="trendingCard is-flex">
+              <img src="./assets/av3.jpg" alt="avatar" />
+              <p class="">New Year resolutions and you</p>
             </div>
-            <div>
-              <img src="">
-              <p>Lorem ipsum dolor sit amet </p>
+            <div class="trendingCard is-flex">
+              <img src="./assets/av4.png" alt="avatar" />
+              <p class="">Relationships advice, with prof..</p>
             </div>
           </div>
         </div>

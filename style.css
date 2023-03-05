@@ -8,7 +8,7 @@
 body {
   min-height: 100vh;
   min-width: 300px;
-  font-family: sans-serif
+  font-family: 'Ubuntu', sans-serif;
 }
 
 
@@ -58,8 +58,30 @@ input {
 
 /* General */
 
+:root.light {
+  --color-base-bg: #ecf0f1;
+  --color-extra-bg: #adbfcc;
+  --color-extra-bg-dark: #8f9ca5;
+  --color-element-bg: #e2e2e2;
+  --color-element-bg-dark: #b4b4b4;
+  --color-base-text: rgb(18, 18, 18);
+  --theme-name: "light";
+}
+
+:root.dark {
+  --color-base-bg: #1d2935;
+  --color-extra-bg: #475761;
+  --color-extra-bg-dark: #353f46;
+  --color-element-bg: #2e3842;
+  --color-element-bg-dark: #4e5e6b;
+  --color-base-text: rgb(228, 228, 228);
+  --theme-name: "dark";
+}
+
+
 body {
   font-size: 0.6rem;
+  color: var(--color-base-text)
 }
 
 .material-icons {
@@ -86,7 +108,7 @@ body {
 
 #dashHeader {
   grid-area: header;
-  background: lightgray;
+  background: var(--color-element-bg);
   align-items: center;
   padding: 0 30px;
 }
@@ -95,6 +117,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .avatarContainer img {
@@ -115,11 +138,12 @@ body {
 .menuIcon,
 .headerInput,
 .addButton,
-.notifIcon {
+.notifIcon,
+.themeIcon {
   margin-right: 10px;
 }
 
-.username {
+.username, .hide {
   display: none;
 }
 
@@ -128,7 +152,7 @@ body {
 
 #dashSidebar {
   grid-area: sidebar;
-  background: rgb(189, 192, 226);
+  background: var(--color-extra-bg);
   display: none;
   padding: 0 20px;
   flex-direction: column;
@@ -136,7 +160,7 @@ body {
 }
 
 #dashSidebarMobile {
-  background: rgb(189, 192, 226);
+  background: var(--color-extra-bg);
   display: block;
   padding: 0 10px;
   flex-direction: column;
@@ -155,17 +179,19 @@ body {
   padding-left: 0.4em;
 }
 
-#dashSidebar div,
-#dashSidebarMobile div {
+.dashOption {
   align-items: center;
   padding: 0.3rem;
   margin-bottom: 0.1rem;
   cursor: pointer;
 }
 
-#dashSidebar .dashOption:hover,
-#dashSidebarMobile .dashOption:hover {
-  background-color: aqua;
+.communities {
+  margin-bottom: 1.6rem;
+}
+
+.dashOption:hover {
+  background-color: var(--color-extra-bg-dark);
 }
 
 
@@ -173,9 +199,13 @@ body {
 
 #dashMain {
   grid-area: main;
-  background: whitesmoke;
+  background: var(--color-base-bg);
   display: block;
   padding: 1rem;
+}
+
+.projects {
+  margin-top: 1em;
 }
 
 .projectsSection,
@@ -186,10 +216,16 @@ body {
   padding: 0.8em;
 }
 
+.annTrendSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .projectCard {
   margin-top: 1em;
-  background-color: lightgray;
-  border-left: solid 4px lightblue;
+  background-color: var(--color-element-bg);
+  border-left: solid 4px var(--color-extra-bg);
   border-radius: 3px;
   padding: 0.8em;
   padding-bottom: 0.2em;
@@ -197,6 +233,10 @@ body {
 
 .projectCard .is-flex {
   justify-content: flex-end;
+}
+
+.projectCard h3 {
+  margin-bottom: 10px;
 }
 
 .projectCard i {
@@ -210,13 +250,39 @@ body {
 
 .announcements,
 .trending {
-  background: lightgray;
+  background: var(--color-element-bg);
   margin-top: 1em;
   padding: 0.8em;
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.announcements {
+  padding: 1em;
+}
 
+.announcements p {
+  padding: 1em 0 1.5em 0;
+}
+
+.trendingCard {
+  justify-content: center;
+  align-items: center;
+  padding: 0.3em;
+  cursor: pointer;
+}
+
+.trendingCard p {
+  font-weight: bold;
+}
+
+.trendingCard img {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 15px;
+}
 
 
 
@@ -257,6 +323,10 @@ body {
   .avatarContainer img {
     width: 50px;
   }
+
+  .projectCard p {
+    padding-right: 50px;
+  }
 }
 
 
@@ -285,7 +355,7 @@ body {
     padding: 5px;
     justify-content: space-between;
     width: 150px;
-    background-color: gray;
+    background-color: var(--color-element-bg-dark);
   }
 
   .username {
@@ -295,6 +365,14 @@ body {
 
   #dashMain {
     display: flex;
+  }
+
+  #dashMain .projectsSection {
+    flex: 3;
+  }
+
+  #dashMain .annTrendSection {
+    flex: 1;
   }
 
   .projects {
@@ -307,5 +385,10 @@ body {
   .projectCard {
     flex: 1 1 300px;
     margin-top: 0;
+  }
+
+  .announcements,
+  .trending {
+    font-size: 0.8rem;
   }
 }
